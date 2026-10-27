@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#164e36">
+<title>Nutri Hub | Healthy Bites, Happier Life</title>
+
+<style>
+:root {
+  --green: #164e36;
+  --light-green: #eaf5e9;
+  --lime: #c9f27a;
+  --cream: #fffdf6;
+  --text: #202820;
+  --muted: #687568;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+  background: rgba(255,253,246,0.96);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e7ebdf;
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--green);
+  line-height: 1.1;
+}
+
+.brand-tag {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: #689b43;
+}
+
+.cart-button {
+  border: 0;
+  background: var(--green);
+  color: white;
+  padding: 11px 17px;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.cart-count {
+  background: var(--lime);
+  color: var(--green);
+  padding: 2px 7px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+/* HERO */
+
+.hero {
+  padding: 65px 0 75px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 30%, #e3f1cf 0, transparent 28%),
+    var(--cream);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: var(--light-green);
+  color: var(--green);
+  border-radius: 30px;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 70px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: var(--green);
+  margin-bottom: 22px;
+}
+
+.hero h1 span {
+  color: #79a943;
+}
+
+.hero p {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 14px 23px;
+  font-weight: 800;
+  border: 2px solid var(--green);
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #286849;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  color: var(--green);
+}
+
+.btn-outline:hover {
+  background: var(--light-green);
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 48% 48% 24px 24px;
+  box-shadow: 0 20px 50px #164e3620;
+}
+
+.floating-note {
+  position: absolute;
+  bottom: 25px;
+  left: -20px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px #00000015;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.floating-note small {
+  display: block;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* BENEFITS */
+
+.benefits {
+  padding: 24px 0;
+  background: var(--green);
+  color: white;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.benefit {
+  padding: 10px;
+}
+
+.benefit strong {
+  display: block;
+  font-size: 15px;
+}
+
+.benefit span {
+  font-size: 12px;
+  color: #d5e6d7;
+}
+
+/* SECTIONS */
+
+section {
+  scroll-margin-top: 90px;
+}
+
+.menu-section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 35px;
+}
+
+.section-heading .mini-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #729e45;
+}
+
+.section-heading h2 {
+  color: var(--green);
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  margin: 9px 0 12px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* FILTERS */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 9px 18px;
+  border: 1px solid #dce5d6;
+  background: white;
+  color: var(--green);
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+/* PRODUCTS */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #edf0e8;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px #164e3610;
+}
+
+.product-image-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--light-green);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: var(--lime);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-category {
+  color: #7a9c59;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-info h3 {
+  color: var(--green);
+  font-size: 19px;
+  margin: 5px 0 7px;
+}
+
+.product-description {
+  color: var(--muted);
+  font-size: 13px;
+  min-height: 42px;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.price {
+  color: var(--green);
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.add-btn {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.add-btn:hover {
+  background: #397b4e;
+}
+
+/* ABOUT */
+
+.about-section {
+  padding: 75px 0;
+  background: var(--light-green);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.about-content h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  color: var(--green);
+  line-height: 1.2;
+  margin: 10px 0 18px;
+}
+
+.about-content p {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.about-points {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+  font-weight: 700;
+  color: var(--green);
+  font-size: 14px;
+}
+
+/* CTA */
+
+.cta-section {
+  padding: 75px 0;
+}
+
+.cta-box {
+  background: var(--green);
+  color: white;
+  padding: 50px 30px;
+  border-radius: 28px;
+  text-align: center;
+}
+
+.cta-box h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.cta-box p {
+  color: #d7e8d9;
+  margin-bottom: 25px;
+}
+
+.cta-box .btn {
+  background: var(--lime);
+  color: var(--green);
+  border-color: var(--lime);
+}
+
+/* FOOTER */
+
+footer {
+  background: #103b29;
+  color: white;
+  padding: 40px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 35px;
+  padding-bottom: 30px;
+}
+
+footer h3 {
+  margin-bottom: 13px;
+}
+
+footer p,
+footer a {
+  color: #c9ddce;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff25;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #c9ddce;
+  font-size: 12px;
+}
+
+/* CART MODAL */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0008;
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.cart-modal {
+  background: white;
+  width: min(500px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 22px;
+  padding: 25px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  color: var(--green);
+}
+
+.close-btn {
+  background: #edf4e8;
+  color: var(--green);
+  border: 0;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 22px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf0e8;
+}
+
+.cart-item strong {
+  color: var(--green);
+}
+
+.cart-item small {
+  display: block;
+  color: var(--muted);
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--light-green);
+  color: var(--green);
+  font-weight: 900;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--green);
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  background: var(--green);
+  color: white;
+  border-radius: 30px;
+  font-weight: 900;
+}
+
+.empty-cart {
+  text-align: center;
+  color: var(--muted);
+  padding: 25px 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    display: none;
+  }
+
+  .hero {
+    padding: 45px 0 60px;
+  }
+
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 35px;
+  }
+
+  .hero-image {
+    height: 320px;
+  }
+
+  .floating-note {
+    left: 10px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .product-image-wrap {
+    height: 170px;
+  }
+
+  .product-info {
+    padding: 14px;
+  }
+
+  .product-info h3 {
+    font-size: 16px;
+  }
+
+  .product-description {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .add-btn {
+    padding: 9px 11px;
+  }
+
+  .about-image {
+    height: 280px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 440px) {
+  .container {
+    width: 92%;
+  }
+
+  .navbar {
+    min-height: 70px;
+  }
+
+  .logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-name {
+    font-size: 19px;
+  }
+
+  .brand-tag {
+    font-size: 9px;
+  }
+
+  .cart-button {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .product-grid {
+    gap: 10px;
+  }
+
+  .product-image-wrap {
+    height: 140px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  .benefit-grid {
+    gap: 5px;
+  }
+
+  .benefit strong {
+    font-size: 12px;
+  }
+
+  .benefit span {
+    font-size: 10px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+
+    <a href="#home" class="brand">
+      <img src="nutri_logo.jpg" alt="Nutri Hub Logo" class="logo"
+           onerror="this.style.display='none'">
+      <div>
+        <div class="brand-name">Nutri Hub</div>
+        <div class="brand-tag">HEALTHY BITES, HAPPIER LIFE</div>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#menu">Our Menu</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <button class="cart-button" onclick="openCart()">
+        🛒 Cart <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <span class="eyebrow">🌿 FRESH • TASTY • FEEL-GOOD FOOD</span>
+
+      <h1>
+        Eat Better.<br>
+        Feel <span>Better.</span>
+      </h1>
+
+      <p>
+        Healthy food doesn't have to be boring.
+        Discover delicious bites and feel-good meals
+        made for your everyday lifestyle.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">Explore Menu ↗</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=85"
+        alt="Fresh and colourful healthy food"
+      >
+      <div class="floating-note">
+        🌱 Good Food, Good Mood
+        <small>A little goodness in every bite</small>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container benefit-grid">
+
+    <div class="benefit">
+      <strong>🥗 Fresh & Tasty</strong>
+      <span>Delicious food for your day</span>
+    </div>
+
+    <div class="benefit">
+      <strong>💚 Feel-Good Choices</strong>
+      <span>Make room for better habits</span>
+    </div>
+
+    <div class="benefit">
+      <strong>✨ Made With Care</strong>
+      <span>Every bite matters</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="mini-title">GOOD FOOD STARTS HERE</span>
+      <h2>Explore Our Menu</h2>
+      <p>
+        Find your favourite bite. Choose what you love
+        and add it to your cart.
+      </p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterProducts('all',this)">All Items</button>
+      <button class="filter-btn" onclick="filterProducts('sandwich',this)">Sandwiches</button>
+      <button class="filter-btn" onclick="filterProducts('oats',this)">Oats & Bowls</button>
+      <button class="filter-btn" onclick="filterProducts('drinks',this)">Drinks</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+
+    <p style="text-align:center;color:#687568;font-size:12px;margin-top:22px;">
+      Demo menu: Please confirm actual items, ingredients and prices with Nutri Hub.
+    </p>
+
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="container about-grid">
+
+    <div>
+      <img
+        class="about-image"
+        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+        alt="Fresh healthy meal"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="about-content">
+      <span class="mini-title">A LITTLE ABOUT US</span>
+      <h2>Small Choices.<br>Better Days.</h2>
+
+      <p>
+        At Nutri Hub, we're all about making food moments
+        enjoyable. Whether you're starting your morning
+        or taking a break during the day, find something
+        delicious to brighten your routine.
+      </p>
+
+      <p>
+        Good food, a positive mood, and one better choice
+        at a time — that's the Nutri Hub way.
+      </p>
+
+      <div class="about-points">
+        <div>✓ Food made with care</div>
+        <div>✓ Delicious everyday options</div>
+        <div>✓ A fresh take on food</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Your Next Favourite Bite Awaits.</h2>
+      <p>
+        Explore the menu and get in touch with Nutri Hub
+        to place your order.
+      </p>
+      <a class="btn" href="#menu">Choose Your Food ↗</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>🥗 Nutri Hub</h3>
+        <p>
+          Healthy Bites, Happier Life.<br>
+          Making everyday food moments more enjoyable.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#menu">Our Menu</a>
+          <a href="#about">About Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Connect With Us</h3>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/nutri_hub0/" target="_blank" rel="noopener">
+            📸 Instagram
+          </a>
+          <a href="#contact">📍 Ambikapur</a>
+          <p>Contact details can be added here.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Nutri Hub. All rights reserved.</span>
+      <span>Made with 💚 for better food moments.</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- CART POPUP -->
+
+<div class="modal-overlay" id="cartOverlay" onclick="overlayClick(event)">
+  <div class="cart-modal">
+
+    <div class="modal-header">
+      <h2>Your Cart 🛒</h2>
+      <button class="close-btn" onclick="closeCart()">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+
+    <button class="checkout-btn" onclick="checkout()">
+      Order on WhatsApp →
+    </button>
+
+    <p style="font-size:11px;color:#687568;text-align:center;margin-top:12px;">
+      Demo ordering: WhatsApp number must be configured before use.
+    </p>
+
+  </div>
+</div>
+
+<script>
+/*
+  NUTRI HUB WEBSITE SETTINGS
+
+  1. Update product names and prices below.
+  2. Replace the WhatsApp placeholder with the real number.
+  3. Use country code, without + sign or spaces.
+     Example format: 919876543210
+*/
+
+const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+const products = [
+  {
+    id: 1,
+    name: "Veggie Sandwich",
+    category: "sandwich",
+    categoryName: "Sandwich",
+    price: 99,
+    badge: "FRESH PICK",
+    description: "A colourful veggie sandwich for a satisfying bite.",
+    image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 2,
+    name: "Grilled Sandwich",
+    category: "sandwich",
+    categoryName: "Sandwich",
+    price: 119,
+    badge: "POPULAR",
+    description: "A golden grilled sandwich with a tasty filling.",
+    image: "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 3,
+    name: "Masala Oats Bowl",
+    category: "oats",
+    categoryName: "Oats & Bowls",
+    price: 89,
+    badge: "GOODNESS BOWL",
+    description: "A comforting bowl for your everyday routine.",
+    image: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 4,
+    name: "Fruit Oats Bowl",
+    category: "oats",
+    categoryName: "Oats & Bowls",
+    price: 129,
+    badge: "FRUITY",
+    description: "A colourful bowl inspired by fruity breakfast favourites.",
+    image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 5,
+    name: "Fresh Fruit Bowl",
+    category: "oats",
+    categoryName: "Oats & Bowls",
+    price: 99,
+    badge: "FRESH",
+    description: "A bright mix of fruit for a refreshing food break.",
+    image: "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 6,
+    name: "Fresh Juice",
+    category: "drinks",
+    categoryName: "Drinks",
+    price: 79,
+    badge: "REFRESHING",
+    description: "A refreshing drink to go with your favourite bite.",
+    image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+let cart = [];
+
+function renderProducts(list = products) {
+  const grid = document.getElementById("productGrid");
+
+  grid.innerHTML = list.map(product => `
+    <article class="product-card">
+      <div class="product-image-wrap">
+        <img
+          class="product-image"
+          src="${product.image}"
+          alt="${product.name}"
+          loading="lazy"
+        >
+        <span class="product-badge">${product.badge}</span>
+      </div>
+
+      <div class="product-info">
+        <span class="product-category">${product.categoryName}</span>
+        <h3>${product.name}</h3>
+        <p class="product-description">${product.description}</p>
+
+        <div class="product-bottom">
+          <span class="price">₹${product.price}</span>
+          <button class="add-btn" onclick="addToCart(${product.id})">
+            + Add
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function filterProducts(category, button) {
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  const filtered = category === "all"
+    ? products
+    : products.filter(product => product.category === category);
+
+  renderProducts(filtered);
+}
+
+function addToCart(id) {
+  const product = products.find(item => item.id === id);
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+
+  updateCart();
+}
+
+function changeQuantity(id, change) {
+  const item = cart.find(product => product.id === id);
+
+  if (!item) return;
+
+  item.quantity += change;
+
+  if (item.quantity <= 0) {
+    cart = cart.filter(product => product.id !== id);
+  }
+
+  updateCart();
+}
+
+function updateCart() {
+  const totalItems = cart.reduce(
+    (sum, item) => sum + item.quantity, 0
+  );
+
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity, 0
+  );
+
+  document.getElementById("cartCount").textContent = totalItems;
+  document.getElementById("cartTotal").textContent = "₹" + totalPrice;
+
+  const cartItems = document.getElementById("cartItems");
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = `
+      <div class="empty-cart">
+        <div style="font-size:42px;">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>Add something delicious from our menu.</p>
+      </div>
+    `;
+    return;
+  }
+
+  cartItems.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div>
+        <strong>${item.name}</strong>
+        <small>₹${item.price} × ${item.quantity}</small>
+        <strong>₹${item.price * item.quantity}</strong>
+      </div>
+
+      <div class="quantity-controls">
+        <button onclick="changeQuantity(${item.id},-1)">−</button>
+        <span>${item.quantity}</span>
+        <button onclick="changeQuantity(${item.id},1)">+</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function openCart() {
+  updateCart();
+  document.getElementById("cartOverlay").classList.add("open");
+}
+
+function closeCart() {
+  document.getElementById("cartOverlay").classList.remove("open");
+}
+
+function overlayClick(event) {
+  if (event.target.id === "cartOverlay") {
+    closeCart();
+  }
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty! Please add an item first.");
+    return;
+  }
+
+  if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
+    alert(
+      "Demo website: Please replace WHATSAPP_NUMBER in index.html " +
+      "with the real Nutri Hub WhatsApp number before placing orders."
+    );
+    return;
+  }
+
+  const lines = cart.map(item =>
+    `• ${item.name} x ${item.quantity} = ₹${item.price * item.quantity}`
+  );
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity, 0
+  );
+
+  const message =
+    "Hello Nutri Hub! I would like to place an order:\n\n" +
+    lines.join("\n") +
+    "\n\nTotal: ₹" + total +
+    "\n\nPlease confirm availability. Thank you!";
+
+  const url =
+    "https://wa.me/" + WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+renderProducts();
+updateCart();
+</script>
+
+</body>
+</html>
